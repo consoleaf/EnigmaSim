@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Security.Permissions;
 
 namespace EnigmaLib
 {
@@ -26,9 +25,8 @@ namespace EnigmaLib
 
         public char Encipher(char key)
         {
-            int shift, index;
-            shift = (State) - 'A';
-            index = (key - 'A' + 52) % 26; // True index
+            var shift = (State) - 'A';
+            var index = (key - 'A' + 52) % 26;
             index = (index + shift + 52) % 26; // Actual connector hit
 
             char letter = _wiring[index]; // Rotor letter generated

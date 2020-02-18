@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace EnigmaLib
 {
@@ -14,18 +13,18 @@ namespace EnigmaLib
         private readonly string _date;
 
         private char[] _wiring;
-        private char[] _rwiring = new char[26];
+        private readonly char[] _rWiring = new char[26];
 
-        public char[] Wiring
+        private char[] Wiring
         {
             get => _wiring;
             set
             {
                 _wiring = value;
-                Array.Copy(value, 0, _rwiring, 0, value.Length);
+                Array.Copy(value, 0, _rWiring, 0, value.Length);
                 for (int i = 0; i < value.Length; i++)
                 {
-                    _rwiring[value[i] - 'A'] = (char) ('A' + i);
+                    _rWiring[value[i] - 'A'] = (char) ('A' + i);
                 }
             }
         }
@@ -70,7 +69,7 @@ namespace EnigmaLib
             var index = (key - 'A') % 52;
             index = (index + shift + 52) % 26; // Actual connector hit
 
-            var letter = _rwiring[index];
+            var letter = _rWiring[index];
 
             var result = (char) ('A' + (letter - 'A' + 52 - shift) % 26);
             return result;
@@ -92,7 +91,7 @@ namespace EnigmaLib
                 $"Name: {_name}\r\n\t" +
                 $"Model: {_model}\r\n\t" +
                 $"Date: {_date}\r\n\t" +
-                $"Wiring: {new String(_wiring)}\r\n\t" +
+                $"Wiring: {new String(Wiring)}\r\n\t" +
                 $"State: {State}";
         }
     }

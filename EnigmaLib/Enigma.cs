@@ -9,116 +9,107 @@ namespace EnigmaLib
     /// </summary>
     public class Enigma
     {
-        private Reflector reflector;
-        private Rotor rotor1;
-        private Rotor rotor2;
-        private Rotor rotor3;
-        private int ringset;
-        private Dictionary<char, char> transtab;
+        private readonly Reflector _reflector;
+        private readonly Rotor _rotor1;
+        private readonly Rotor _rotor2;
 
-        public Enigma(Reflector reflector, Rotor r1, Rotor r2, Rotor r3, string key = "AAA", string plugs = "",
-            int ringset = 1)
+        private readonly Rotor _rotor3;
+
+        // private int _ringSet;
+        private readonly Dictionary<char, char> _transTab;
+
+        public Enigma(Reflector reflector, Rotor r1, Rotor r2, Rotor r3, string key = "AAA", string plugs = "" /*, 
+             int ringSet = 1 */)
         {
-            this.reflector = reflector;
-            this.rotor1 = r1;
-            this.rotor2 = r2;
-            this.rotor3 = r3;
+            this._reflector = reflector;
+            this._rotor1 = r1;
+            this._rotor2 = r2;
+            this._rotor3 = r3;
 
-            this.rotor1.State = key[0];
-            this.rotor2.State = key[1];
-            this.rotor3.State = key[2];
-            this.reflector.State = 'A';
-            this.ringset = ringset;
+            this._rotor1.State = key[0];
+            this._rotor2.State = key[1];
+            this._rotor3.State = key[2];
+            this._reflector.State = 'A';
+            // this._ringSet = ringSet;
 
-            this.transtab = new Dictionary<char, char>();
-            foreach (var plugpair in plugs.Split())
+            this._transTab = new Dictionary<char, char>();
+            foreach (var plugPair in plugs.Split())
             {
-                var k = plugpair[0];
-                var v = plugpair[1];
-                transtab[k] = v;
-                transtab[v] = k;
+                var k = plugPair[0];
+                var v = plugPair[1];
+                _transTab[k] = v;
+                _transTab[v] = k;
             }
         }
 
-        public string Encode(string plaintext_in)
+        public string Encode(string plaintextIn)
         {
-            StringBuilder ciphertext = new StringBuilder();
-            plaintext_in = plaintext_in.ToUpper();
+            StringBuilder ciphering = new StringBuilder();
+            plaintextIn = plaintextIn.ToUpper();
             string plaintextTmp = "";
 
-            foreach (char ch in plaintext_in)
+            foreach (char ch in plaintextIn)
             {
-                if (transtab.ContainsKey(ch))
-                    plaintextTmp += transtab[ch];
+                if (_transTab.ContainsKey(ch))
+                    plaintextTmp += _transTab[ch];
                 else
                     plaintextTmp += ch;
             }
-            
-            plaintext_in = plaintextTmp;
 
-            foreach (char c in plaintext_in)
+            plaintextIn = plaintextTmp;
+
+            foreach (char c in plaintextIn)
             {
-                if (rotor2.IsTurnoverPos)
+                if (_rotor2.IsTurnoverPos)
                 {
-                    rotor2.Notch();
-                    rotor3.Notch();
+                    _rotor2.Notch();
+                    _rotor3.Notch();
                 }
 
-                if (rotor1.IsTurnoverPos)
-                    rotor2.Notch();
+                if (_rotor1.IsTurnoverPos)
+                    _rotor2.Notch();
 
-                rotor1.Notch();
-
-                Console.WriteLine(this);
+                _rotor1.Notch();
 
                 if (!char.IsLetter(c))
                 {
-                    ciphertext.Append(c);
+                    ciphering.Append(c);
                     continue;
                 }
 
-                char t;
-                Console.Write($"{c} -> ");
-                t = rotor1.EncodeRight(c);
-                Console.Write($"{t} -> ");
-                t = rotor2.EncodeRight(t);
-                Console.Write($"{t} -> ");
-                t = rotor3.EncodeRight(t);
-                Console.Write($"{t} -> ");
-                t = reflector.Encipher(t);
-                Console.Write($"{t} -> ");
-                t = rotor3.EncodeLeft(t);
-                Console.Write($"{t} -> ");
-                t = rotor2.EncodeLeft(t);
-                Console.Write($"{t} -> ");
-                t = rotor1.EncodeLeft(t);
-                Console.Write($"{t}");
+                var t = _rotor1.EncodeRight(c);
+                t = _rotor2.EncodeRight(t);
+                t = _rotor3.EncodeRight(t);
+                t = _reflector.Encipher(t);
+                t = _rotor3.EncodeLeft(t);
+                t = _rotor2.EncodeLeft(t);
+                t = _rotor1.EncodeLeft(t);
 
                 Console.WriteLine();
 
-                ciphertext.Append(t);
+                ciphering.Append(t);
             }
 
-            string ciphertextTmp = "";
+            string cipheringTmp = "";
 
-            foreach (char ch in ciphertext.ToString())
+            foreach (char ch in ciphering.ToString())
             {
-                if (transtab.ContainsKey(ch))
-                    ciphertextTmp += transtab[ch];
+                if (_transTab.ContainsKey(ch))
+                    cipheringTmp += _transTab[ch];
                 else
-                    ciphertextTmp += ch;
+                    cipheringTmp += ch;
             }
 
-            return ciphertextTmp;
+            return cipheringTmp;
         }
 
         public override string ToString()
         {
-            return $"Enigma machine.\r\n\r\n" +
-                   $"Reflector: {reflector}\r\n\r\n" +
-                   $"Rotor 1: {rotor1}\r\n\r\n" +
-                   $"Rotor 2: {rotor2}\r\n\r\n" +
-                   $"Rotor 3: {rotor3}\r\n\r\n";
+            return "Enigma machine.\r\n\r\n" +
+                   $"Reflector: {_reflector}\r\n\r\n" +
+                   $"Rotor 1: {_rotor1}\r\n\r\n" +
+                   $"Rotor 2: {_rotor2}\r\n\r\n" +
+                   $"Rotor 3: {_rotor3}\r\n\r\n";
         }
     }
 }
