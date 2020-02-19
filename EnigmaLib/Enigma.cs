@@ -9,14 +9,18 @@ namespace EnigmaLib
     /// </summary>
     public class Enigma
     {
-        private readonly Reflector _reflector;
-        private readonly Rotor _rotor1;
-        private readonly Rotor _rotor2;
+        public readonly Reflector _reflector;
+        public readonly Rotor _rotor1;
+        public readonly Rotor _rotor2;
 
-        private readonly Rotor _rotor3;
+        public readonly Rotor _rotor3;
 
         // private int _ringSet;
-        private readonly Dictionary<char, char> _transTab;
+        
+        /// <summary>
+        /// Represents plugs
+        /// </summary>
+        public readonly Dictionary<char, char> _transTab;
 
         public Enigma(Reflector reflector, Rotor r1, Rotor r2, Rotor r3, string key = "AAA", string plugs = "" /*, 
              int ringSet = 1 */)

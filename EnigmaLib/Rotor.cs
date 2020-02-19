@@ -29,7 +29,22 @@ namespace EnigmaLib
             }
         }
 
-        public char State { get; set; }
+        private char _state;
+
+        public char State
+        {
+            get => _state;
+            set => _state = (char)('A' + (value - 'A' + 52) % 26);
+        }
+
+        public void StateDown()
+        {
+            State = (char)(State - 1);
+        }
+        public void StateUp()
+        {
+            State = (char)(State + 1);
+        }
 
         /// <summary>
         /// Initialization of the rotor
