@@ -35,6 +35,8 @@ namespace EnigmaLib
             this._transTab = new Dictionary<char, char>();
             foreach (var plugPair in plugs.Split())
             {
+                if (plugPair.Length != 2)
+                    continue;
                 var k = plugPair[0];
                 var v = plugPair[1];
                 _transTab[k] = v;
