@@ -51,10 +51,10 @@ namespace EnigmaLib
         public string Encode(string plaintextIn)
         {
             StringBuilder ciphering = new StringBuilder();
-            plaintextIn = plaintextIn.ToUpper();
+            var upper = plaintextIn.ToUpper();
             string plaintextTmp = "";
 
-            foreach (char ch in plaintextIn)
+            foreach (char ch in upper)
             {
                 if (_transTab.ContainsKey(ch))
                     plaintextTmp += _transTab[ch];
@@ -62,9 +62,9 @@ namespace EnigmaLib
                     plaintextTmp += ch;
             }
 
-            plaintextIn = plaintextTmp;
+            upper = plaintextTmp;
 
-            foreach (char c in plaintextIn)
+            foreach (char c in upper)
             {
                 if (_rotor2.IsTurnoverPos)
                 {
@@ -96,17 +96,22 @@ namespace EnigmaLib
                 ciphering.Append(t);
             }
 
-            string cipheringTmp = "";
+            StringBuilder cipheringTmp = new StringBuilder();
 
+            int i = 0;
             foreach (char ch in ciphering.ToString())
             {
+                char c;
                 if (_transTab.ContainsKey(ch))
-                    cipheringTmp += _transTab[ch];
+                    c = _transTab[ch];
                 else
-                    cipheringTmp += ch;
+                    c = ch;
+                if (Char.IsLower(plaintextIn[i++]))
+                    c = Char.ToLower(c);
+                cipheringTmp.Append(c);
             }
 
-            return cipheringTmp;
+            return cipheringTmp.ToString();
         }
 
         public override string ToString()

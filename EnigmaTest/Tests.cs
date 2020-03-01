@@ -9,7 +9,7 @@ namespace EnigmaTest
         [Test]
         public void TestAccurate()
         {
-            string message = "Hello world!";
+            string message = "HELLO WORLD!";
 
             Enigma enigma = new Enigma(PreMade.A, PreMade.I, PreMade.II, PreMade.III, "ABC",
                 "AV BS CG DL FU HZ IN KM OW RX");
