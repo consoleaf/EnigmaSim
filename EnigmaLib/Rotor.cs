@@ -89,7 +89,7 @@ namespace EnigmaLib
             var result = (char) ('A' + (letter - 'A' + 52 - shift) % 26);
             return result;
         }
-
+        
         public void Notch(int offset = 1)
         {
             State = (char) ((State + offset + 52 - 'A') % 26 + 'A');

@@ -86,5 +86,10 @@ namespace EnigmaLib
 
         public static readonly Reflector UKW_K = new Reflector(wiring: "IMETCGFRAYSQBZXWLHKDVUPOJN", name: "UKW-K",
             model: "Swiss K", date: "February 1939");
+
+        public static class Machines
+        {
+            public static readonly Enigma I = new Enigma(PreMade.A, PreMade.I, PreMade.II, PreMade.III);
+        }
     }
 }
