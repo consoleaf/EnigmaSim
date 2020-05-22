@@ -7,6 +7,23 @@ namespace EnigmaLib
     /// </summary>
     public class Reflector
     {
+        public class ReflectorEncodeArgs : EventArgs
+        {
+            public ReflectorEncodeArgs(char s)
+            {
+                msg = s;
+            }
+            private readonly char msg;
+            public char Msg
+            {
+                get
+                {
+                    return msg;
+                }
+            }
+        }
+        public event EventHandler<ReflectorEncodeArgs> ReflectorEncodeEvent;
+
         private readonly string _wiring;
         private readonly string _name;
         private readonly string _model;

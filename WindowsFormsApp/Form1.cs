@@ -18,6 +18,9 @@ namespace WindowsFormsApp
         private char activeKey;
         private char activeEnc;
 
+        private string input = "";
+        private string output = "";
+
         private char ETWForw(char ch)
         {
 //            return (char)('A' + "QWERTZUIOASDFGHJKPYXCVBNML".IndexOf(ch));
@@ -51,6 +54,9 @@ namespace WindowsFormsApp
 
             // Call enigma to encode it and light up the needed label
             this.activeEnc = ETWBackw(this.enigma.Encode("" + ETWForw(keyName)).ToUpper()[0]);
+
+            input += activeKey;
+            output += activeEnc;
 
             UpdateGUI();
         }
@@ -128,6 +134,9 @@ namespace WindowsFormsApp
             tmp = enigma._rotor1.EncodeLeft(tmp);
             LabelPostRight.Text = "" + tmp;
             LabelPreOutput.Text = "" + tmp;
+
+            OutputTextBox.Text = output;
+            InputTextBox.Text = input;
         }
 
         private void ButtonLeftUp_Click(object sender, EventArgs e)
@@ -163,6 +172,23 @@ namespace WindowsFormsApp
         private void ButtonRightDown_Click(object sender, EventArgs e)
         {
             enigma._rotor1.StateDown();
+            UpdateGUI();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            input = "";
+            output = "";
+            UpdateGUI();
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 'a' && e.KeyChar <= 'z')
+            {
+                char c = char.ToUpper(e.KeyChar);
+                ProcessKey(c);
+            }
             UpdateGUI();
         }
     }

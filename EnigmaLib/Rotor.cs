@@ -7,6 +7,37 @@ namespace EnigmaLib
     /// </summary>
     public class Rotor
     {
+        public class RotorEncodeEventArgs : EventArgs
+        {
+            public RotorEncodeEventArgs(char s, DirectionEnum direction)
+            {
+                this.direction = direction;
+                msg = s;
+            }
+            private readonly char msg;
+            private readonly DirectionEnum direction;
+            public char Msg
+            {
+                get
+                {
+                    return msg;
+                }
+            }
+            public DirectionEnum Direction
+            {
+                get
+                {
+                    return direction;
+                }
+            }
+            public enum DirectionEnum
+            {
+                LEFT,
+                RIGHT
+            }
+        }
+        public event EventHandler<RotorEncodeEventArgs> RotorEncodeEvent;
+
         private readonly string _notches;
         private readonly string _name;
         private readonly string _model;
@@ -24,7 +55,7 @@ namespace EnigmaLib
                 Array.Copy(value, 0, _rWiring, 0, value.Length);
                 for (int i = 0; i < value.Length; i++)
                 {
-                    _rWiring[value[i] - 'A'] = (char) ('A' + i);
+                    _rWiring[value[i] - 'A'] = (char)('A' + i);
                 }
             }
         }
@@ -74,7 +105,9 @@ namespace EnigmaLib
 
             var letter = _wiring[index];
 
-            var result = (char) ('A' + (letter - 'A' + 52 - shift) % 26);
+            var result = (char)('A' + (letter - 'A' + 52 - shift) % 26);
+            RotorEncodeEvent?.Invoke(this, new RotorEncodeEventArgs(result,
+                RotorEncodeEventArgs.DirectionEnum.RIGHT));
             return result;
         }
 
@@ -86,18 +119,21 @@ namespace EnigmaLib
 
             var letter = _rWiring[index];
 
-            var result = (char) ('A' + (letter - 'A' + 52 - shift) % 26);
+            var result = (char)('A' + (letter - 'A' + 52 - shift) % 26);
+
+            RotorEncodeEvent?.Invoke(this, new RotorEncodeEventArgs(result, 
+                RotorEncodeEventArgs.DirectionEnum.LEFT));
             return result;
         }
-        
+
         public void Notch(int offset = 1)
         {
-            State = (char) ((State + offset + 52 - 'A') % 26 + 'A');
+            State = (char)((State + offset + 52 - 'A') % 26 + 'A');
             // return _notches.Contains("" + State);
             // chr((ord(self.state) + offset - ord('A')) % 26 + ord('A'))
         }
 
-        public bool IsTurnoverPos => _notches.Contains("" + (char) ((State + 1 + 52 - 'A') % 26 + 'A'));
+        public bool IsTurnoverPos => _notches.Contains("" + (char)((State + 1 + 52 - 'A') % 26 + 'A'));
 
         public override string ToString()
         {
