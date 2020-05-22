@@ -7,9 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnigmaLib", "EnigmaLib\Enig
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnigmaTest", "EnigmaTest\EnigmaTest.csproj", "{0179FB6D-EC84-411C-81C2-EAA70BE83331}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp", "WindowsFormsApp\WindowsFormsApp.csproj", "{98E8520F-59DC-4F92-B831-FE4C5B6BAA1E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFApp", "WPFApp\WPFApp.csproj", "{B9B31A82-5EFE-41C2-8CE8-62C8E8FE6C72}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enigma Simulator", "EnigmaSimulator\Enigma Simulator.csproj", "{98E8520F-59DC-4F92-B831-FE4C5B6BAA1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +27,6 @@ Global
 		{98E8520F-59DC-4F92-B831-FE4C5B6BAA1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98E8520F-59DC-4F92-B831-FE4C5B6BAA1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98E8520F-59DC-4F92-B831-FE4C5B6BAA1E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B9B31A82-5EFE-41C2-8CE8-62C8E8FE6C72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B9B31A82-5EFE-41C2-8CE8-62C8E8FE6C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B9B31A82-5EFE-41C2-8CE8-62C8E8FE6C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B9B31A82-5EFE-41C2-8CE8-62C8E8FE6C72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

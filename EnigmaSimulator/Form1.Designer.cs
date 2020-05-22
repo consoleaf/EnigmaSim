@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WindowsFormsApp
+namespace EnigmaSimulator
 {
     partial class Form1
     {
@@ -119,10 +119,8 @@ namespace WindowsFormsApp
             this.InputTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.OutputTextBox = new System.Windows.Forms.TextBox();
-            this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ButtonQ
@@ -1072,10 +1070,6 @@ namespace WindowsFormsApp
             this.OutputTextBox.Size = new System.Drawing.Size(188, 22);
             this.OutputTextBox.TabIndex = 0;
             // 
-            // form1BindingSource
-            // 
-            this.form1BindingSource.DataSource = typeof(WindowsFormsApp.Form1);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1168,15 +1162,14 @@ namespace WindowsFormsApp
             this.Controls.Add(this.ButtonY);
             this.Controls.Add(this.ButtonZ);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Enigma Simulator - Enigma I (Service)";
-            this.KeyPreview = true;
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1274,6 +1267,5 @@ namespace WindowsFormsApp
         private System.Windows.Forms.TextBox InputTextBox;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox OutputTextBox;
-        private System.Windows.Forms.BindingSource form1BindingSource;
     }
 }
