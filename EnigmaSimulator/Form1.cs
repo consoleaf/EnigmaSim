@@ -1,29 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using EnigmaLib;
+using System;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
-using EnigmaLib;
 
 namespace EnigmaSimulator
 {
     public partial class Form1 : Form
     {
-        private Enigma enigma;
-        private char activeKey;
-        private char activeEnc;
-
-        private string input = "";
-        private string output = "";
+        private Save data = new Save();
 
         private char ETWForw(char ch)
         {
-//            return (char)('A' + "QWERTZUIOASDFGHJKPYXCVBNML".IndexOf(ch));
+            //            return (char)('A' + "QWERTZUIOASDFGHJKPYXCVBNML".IndexOf(ch));
             return ch;
         }
 
@@ -35,7 +26,7 @@ namespace EnigmaSimulator
 
         public Form1()
         {
-            this.enigma = new Enigma(PreMade.A, PreMade.III, PreMade.II,
+            this.data.enigma = new Enigma(PreMade.A, PreMade.III, PreMade.II,
                 PreMade.I);
             InitializeComponent();
             UpdateGUITimer.Start();
@@ -50,13 +41,13 @@ namespace EnigmaSimulator
 
         private void ProcessKey(char keyName)
         {
-            this.activeKey = keyName;
+            this.data.activeKey = keyName;
 
             // Call enigma to encode it and light up the needed label
-            this.activeEnc = ETWBackw(this.enigma.Encode("" + ETWForw(keyName)).ToUpper()[0]);
+            this.data.activeEnc = ETWBackw(this.data.enigma.Encode("" + ETWForw(keyName)).ToUpper()[0]);
 
-            input += activeKey;
-            output += activeEnc;
+            data.input += data.activeKey;
+            data.output += data.activeEnc;
 
             UpdateGUI();
         }
@@ -66,14 +57,66 @@ namespace EnigmaSimulator
             UpdateGUI();
         }
 
+        private void SaveState(bool auto = false)
+        {
+            string path = @"Enigma.bin";
+            if (auto)
+            {
+                path = @"Enigma.auto.bin";
+            }
+
+            try
+            {
+                Stream ms = File.OpenWrite(path);
+                BinaryFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(ms, data);
+                ms.Flush();
+                ms.Close();
+                ms.Dispose();
+            }
+            catch (Exception e)
+            {
+                if (!auto)
+                    MessageBox.Show("Не удалось сохранить файл.");
+            }
+        }
+
+        private void LoadState(bool auto = false)
+        {
+            string path = @"Enigma.bin";
+            if (auto)
+            {
+                path = @"Enigma.auto.bin";
+            }
+
+            try
+            {
+                Stream ms = File.OpenRead(path);
+                BinaryFormatter formatter = new BinaryFormatter();
+                data = (Save)formatter.Deserialize(ms);
+                panelTextBox.Text = data.plugs;
+                ms.Flush();
+                ms.Close();
+                ms.Dispose();
+            }
+            catch (Exception e)
+            {
+                if (!auto)
+                    MessageBox.Show("Не удалось загрузить файл!");
+            }
+        }
+
         private void UpdateGUI()
         {
-            LabelRotorLeft.Text = "" + enigma._rotor3.State;
-            LabelRotorMid.Text = "" + enigma._rotor2.State;
-            LabelRotorRight.Text = "" + enigma._rotor1.State;
-            
-            if (this.activeEnc == 0)
-                return;
+            // Auto-save
+            SaveState(auto: true);
+
+            // Check if serialized file exists
+            LoadButton.Enabled = File.Exists(@"Enigma.bin");
+
+            LabelRotorLeft.Text = "" + data.enigma._rotor3.State;
+            LabelRotorMid.Text = "" + data.enigma._rotor2.State;
+            LabelRotorRight.Text = "" + data.enigma._rotor1.State;
 
             // Light up the correct label
             foreach (object control in Controls)
@@ -83,12 +126,6 @@ namespace EnigmaSimulator
                     label.Font = new Font(label.Font, FontStyle.Regular);
                     label.BackColor = Color.Empty;
                 }
-            }
-
-            if (Controls.Find("Label" + this.activeEnc, true)[0] is Label lbl)
-            {
-                lbl.Font = new Font(lbl.Font, FontStyle.Bold);
-                lbl.BackColor = Color.Gold;
             }
 
             // Light up chosen button
@@ -101,95 +138,151 @@ namespace EnigmaSimulator
                 }
             }
 
-            if (Controls.Find("Button" + this.activeKey, true)[0] is Button btn)
+            if (this.data.activeEnc == 0)
+            {
+                OutputTextBox.Text = data.output;
+                InputTextBox.Text = data.input;
+                LabelPostInput.Text = "N/A";
+                LabelPreRight.Text = "N/A";
+                LabelPreMid.Text = "N/A";
+                LabelPreLeft.Text = "N/A";
+                LabelPreReflector.Text = "N/A";
+                LabelPostReflector.Text = "N/A";
+                LabelPostLeft.Text = "N/A";
+                LabelPostMid.Text = "N/A";
+                LabelPostRight.Text = "N/A";
+                LabelPreOutput.Text = "N/A";
+                return;
+            }
+
+            if (Controls.Find("Label" + this.data.activeEnc, true)[0] is Label lbl)
+            {
+                lbl.Font = new Font(lbl.Font, FontStyle.Bold);
+                lbl.BackColor = Color.Gold;
+            }
+
+            if (Controls.Find("Button" + this.data.activeKey, true)[0] is Button btn)
             {
                 btn.Font = new Font(btn.Font, FontStyle.Bold);
             }
-            
-            char tmp = this.activeKey;
-            if (enigma._transTab.ContainsKey(tmp))
-                tmp = enigma._transTab[tmp];
-            
+
+            char tmp = this.data.activeKey;
+            if (data.enigma._transTab.ContainsKey(tmp))
+                tmp = data.enigma._transTab[tmp];
+
             LabelPostInput.Text = "" + tmp;
             LabelPreRight.Text = "" + tmp;
 
-            tmp = enigma._rotor1.EncodeRight(tmp);
+            tmp = data.enigma._rotor1.EncodeRight(tmp);
             LabelPreMid.Text = "" + tmp;
 
-            tmp = enigma._rotor2.EncodeRight(tmp);
+            tmp = data.enigma._rotor2.EncodeRight(tmp);
             LabelPreLeft.Text = "" + tmp;
 
-            tmp = enigma._rotor3.EncodeRight(tmp);
+            tmp = data.enigma._rotor3.EncodeRight(tmp);
             LabelPreReflector.Text = "" + tmp;
 
-            tmp = enigma._reflector.Encipher(tmp);
+            tmp = data.enigma._reflector.Encipher(tmp);
             LabelPostReflector.Text = "" + tmp;
 
-            tmp = enigma._rotor3.EncodeLeft(tmp);
+            tmp = data.enigma._rotor3.EncodeLeft(tmp);
             LabelPostLeft.Text = "" + tmp;
 
-            tmp = enigma._rotor2.EncodeLeft(tmp);
+            tmp = data.enigma._rotor2.EncodeLeft(tmp);
             LabelPostMid.Text = "" + tmp;
 
-            tmp = enigma._rotor1.EncodeLeft(tmp);
+            tmp = data.enigma._rotor1.EncodeLeft(tmp);
             LabelPostRight.Text = "" + tmp;
             LabelPreOutput.Text = "" + tmp;
 
-            OutputTextBox.Text = output;
-            InputTextBox.Text = input;
+            OutputTextBox.Text = data.output;
+            InputTextBox.Text = data.input;
         }
 
         private void ButtonLeftUp_Click(object sender, EventArgs e)
         {
-            enigma._rotor3.StateUp();
+            data.enigma._rotor3.StateUp();
             UpdateGUI();
         }
 
         private void ButtonLeftDown_Click(object sender, EventArgs e)
         {
-            enigma._rotor3.StateDown();
+            data.enigma._rotor3.StateDown();
             UpdateGUI();
         }
 
         private void ButtonMidUp_Click(object sender, EventArgs e)
         {
-            enigma._rotor2.StateUp();
+            data.enigma._rotor2.StateUp();
             UpdateGUI();
         }
 
         private void ButtonMidDown_Click(object sender, EventArgs e)
         {
-            enigma._rotor2.StateDown();
+            data.enigma._rotor2.StateDown();
             UpdateGUI();
         }
 
         private void ButtonRightUp_Click(object sender, EventArgs e)
         {
-            enigma._rotor1.StateUp();
+            data.enigma._rotor1.StateUp();
             UpdateGUI();
         }
 
         private void ButtonRightDown_Click(object sender, EventArgs e)
         {
-            enigma._rotor1.StateDown();
+            data.enigma._rotor1.StateDown();
+            UpdateGUI();
+        }
+
+        private void Reset()
+        {
+            data.input = "";
+            data.output = "";
+            data.activeEnc = (char)0;
+            data.activeKey = (char)0;
+            data.plugs = "";
             UpdateGUI();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            input = "";
-            output = "";
-            UpdateGUI();
+            Reset();
         }
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (panelTextBox.Focused)
+                return;
             if (e.KeyChar >= 'a' && e.KeyChar <= 'z')
             {
                 char c = char.ToUpper(e.KeyChar);
                 ProcessKey(c);
             }
             UpdateGUI();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string value = panelTextBox.Text.Trim().Replace('\n', ' ').ToUpper();
+            data.plugs = value;
+            data.enigma.SetPlugs(data.plugs);
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            LoadState(auto: true); // Initial load if auto-saved.
+            UpdateGUI();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SaveState();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            LoadState();
         }
     }
 }

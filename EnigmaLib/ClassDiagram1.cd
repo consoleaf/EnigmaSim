@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="EnigmaLib.Enigma">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAEAACwAAAAAAAAAAAAMAAAAAABAAA=</HashCode>
+      <FileName>Enigma.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnigmaLib.PreMade">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="EnigmaLib.PreMade.Machines">
+        <TypeIdentifier>
+          <NewMemberFileName>PreMade.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>CAhAAAQAAAACAEAAAEAEAAAgQAQAACAgAgwAoCERAgE=</HashCode>
+      <FileName>PreMade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnigmaLib.Reflector">
+    <Position X="6" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="EnigmaLib.Reflector.ReflectorEncodeArgs">
+        <TypeIdentifier>
+          <NewMemberFileName>Reflector.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAIgAAAAAAAAAFBgAAAAAAAAAAAEAAAAAABAAAAAA=</HashCode>
+      <FileName>Reflector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnigmaLib.Rotor">
+    <Position X="3.5" Y="0.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="EnigmaLib.Rotor.RotorEncodeEventArgs">
+        <Compartments>
+          <Compartment Name="Nested Types" Collapsed="false" />
+        </Compartments>
+        <NestedTypes>
+          <Enum Name="EnigmaLib.Rotor.RotorEncodeEventArgs.DirectionEnum">
+            <TypeIdentifier>
+              <NewMemberFileName>Rotor.cs</NewMemberFileName>
+            </TypeIdentifier>
+          </Enum>
+        </NestedTypes>
+        <TypeIdentifier>
+          <NewMemberFileName>Rotor.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAIABGAAAAQAAEBgCACBAAAICAgEAAIAAABAAAAAA=</HashCode>
+      <FileName>Rotor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

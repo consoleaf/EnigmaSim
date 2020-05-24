@@ -5,6 +5,7 @@ namespace EnigmaLib
     /// <summary>
     /// Represents a reflector (aka UKW)
     /// </summary>
+    [Serializable]
     public class Reflector
     {
         public class ReflectorEncodeArgs : EventArgs

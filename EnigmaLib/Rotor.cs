@@ -5,6 +5,7 @@ namespace EnigmaLib
     /// <summary>
     /// Represents a rotor
     /// </summary>
+    [Serializable]
     public class Rotor
     {
         public class RotorEncodeEventArgs : EventArgs

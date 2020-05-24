@@ -119,8 +119,15 @@ namespace EnigmaSimulator
             this.InputTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.OutputTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panelTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.LoadButton = new System.Windows.Forms.Button();
+            this.SaveButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // ButtonQ
@@ -128,7 +135,7 @@ namespace EnigmaSimulator
             this.ButtonQ.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonQ.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonQ.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonQ.Location = new System.Drawing.Point(207, 314);
+            this.ButtonQ.Location = new System.Drawing.Point(57, 258);
             this.ButtonQ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonQ.Name = "ButtonQ";
             this.ButtonQ.Size = new System.Drawing.Size(41, 30);
@@ -142,7 +149,7 @@ namespace EnigmaSimulator
             this.ButtonW.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonW.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonW.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonW.Location = new System.Drawing.Point(254, 314);
+            this.ButtonW.Location = new System.Drawing.Point(104, 258);
             this.ButtonW.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonW.Name = "ButtonW";
             this.ButtonW.Size = new System.Drawing.Size(41, 30);
@@ -156,7 +163,7 @@ namespace EnigmaSimulator
             this.ButtonF.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonF.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonF.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonF.Location = new System.Drawing.Point(374, 348);
+            this.ButtonF.Location = new System.Drawing.Point(224, 292);
             this.ButtonF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonF.Name = "ButtonF";
             this.ButtonF.Size = new System.Drawing.Size(41, 30);
@@ -170,7 +177,7 @@ namespace EnigmaSimulator
             this.ButtonD.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonD.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonD.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonD.Location = new System.Drawing.Point(327, 348);
+            this.ButtonD.Location = new System.Drawing.Point(177, 292);
             this.ButtonD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonD.Name = "ButtonD";
             this.ButtonD.Size = new System.Drawing.Size(41, 30);
@@ -184,7 +191,7 @@ namespace EnigmaSimulator
             this.ButtonS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonS.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonS.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonS.Location = new System.Drawing.Point(280, 348);
+            this.ButtonS.Location = new System.Drawing.Point(130, 292);
             this.ButtonS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonS.Name = "ButtonS";
             this.ButtonS.Size = new System.Drawing.Size(41, 30);
@@ -198,7 +205,7 @@ namespace EnigmaSimulator
             this.ButtonA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonA.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonA.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonA.Location = new System.Drawing.Point(233, 348);
+            this.ButtonA.Location = new System.Drawing.Point(83, 292);
             this.ButtonA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonA.Name = "ButtonA";
             this.ButtonA.Size = new System.Drawing.Size(41, 30);
@@ -212,7 +219,7 @@ namespace EnigmaSimulator
             this.ButtonP.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonP.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonP.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonP.Location = new System.Drawing.Point(207, 382);
+            this.ButtonP.Location = new System.Drawing.Point(57, 326);
             this.ButtonP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonP.Name = "ButtonP";
             this.ButtonP.Size = new System.Drawing.Size(41, 30);
@@ -226,7 +233,7 @@ namespace EnigmaSimulator
             this.ButtonO.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonO.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonO.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonO.Location = new System.Drawing.Point(583, 314);
+            this.ButtonO.Location = new System.Drawing.Point(433, 258);
             this.ButtonO.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonO.Name = "ButtonO";
             this.ButtonO.Size = new System.Drawing.Size(41, 30);
@@ -240,7 +247,7 @@ namespace EnigmaSimulator
             this.ButtonI.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonI.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonI.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonI.Location = new System.Drawing.Point(536, 314);
+            this.ButtonI.Location = new System.Drawing.Point(386, 258);
             this.ButtonI.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonI.Name = "ButtonI";
             this.ButtonI.Size = new System.Drawing.Size(41, 30);
@@ -254,7 +261,7 @@ namespace EnigmaSimulator
             this.ButtonU.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonU.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonU.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonU.Location = new System.Drawing.Point(489, 314);
+            this.ButtonU.Location = new System.Drawing.Point(339, 258);
             this.ButtonU.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonU.Name = "ButtonU";
             this.ButtonU.Size = new System.Drawing.Size(41, 30);
@@ -268,7 +275,7 @@ namespace EnigmaSimulator
             this.ButtonY.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonY.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonY.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonY.Location = new System.Drawing.Point(254, 382);
+            this.ButtonY.Location = new System.Drawing.Point(104, 326);
             this.ButtonY.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonY.Name = "ButtonY";
             this.ButtonY.Size = new System.Drawing.Size(41, 30);
@@ -282,7 +289,7 @@ namespace EnigmaSimulator
             this.ButtonT.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonT.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonT.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonT.Location = new System.Drawing.Point(395, 314);
+            this.ButtonT.Location = new System.Drawing.Point(245, 258);
             this.ButtonT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonT.Name = "ButtonT";
             this.ButtonT.Size = new System.Drawing.Size(41, 30);
@@ -296,7 +303,7 @@ namespace EnigmaSimulator
             this.ButtonR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonR.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonR.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonR.Location = new System.Drawing.Point(348, 314);
+            this.ButtonR.Location = new System.Drawing.Point(198, 258);
             this.ButtonR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonR.Name = "ButtonR";
             this.ButtonR.Size = new System.Drawing.Size(41, 30);
@@ -310,7 +317,7 @@ namespace EnigmaSimulator
             this.ButtonE.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonE.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonE.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonE.Location = new System.Drawing.Point(301, 314);
+            this.ButtonE.Location = new System.Drawing.Point(151, 258);
             this.ButtonE.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonE.Name = "ButtonE";
             this.ButtonE.Size = new System.Drawing.Size(41, 30);
@@ -324,7 +331,7 @@ namespace EnigmaSimulator
             this.ButtonL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonL.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonL.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonL.Location = new System.Drawing.Point(583, 382);
+            this.ButtonL.Location = new System.Drawing.Point(433, 326);
             this.ButtonL.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonL.Name = "ButtonL";
             this.ButtonL.Size = new System.Drawing.Size(41, 30);
@@ -338,7 +345,7 @@ namespace EnigmaSimulator
             this.ButtonK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonK.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonK.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonK.Location = new System.Drawing.Point(562, 348);
+            this.ButtonK.Location = new System.Drawing.Point(412, 292);
             this.ButtonK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonK.Name = "ButtonK";
             this.ButtonK.Size = new System.Drawing.Size(41, 30);
@@ -352,7 +359,7 @@ namespace EnigmaSimulator
             this.ButtonJ.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonJ.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonJ.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonJ.Location = new System.Drawing.Point(515, 348);
+            this.ButtonJ.Location = new System.Drawing.Point(365, 292);
             this.ButtonJ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonJ.Name = "ButtonJ";
             this.ButtonJ.Size = new System.Drawing.Size(41, 30);
@@ -366,7 +373,7 @@ namespace EnigmaSimulator
             this.ButtonH.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonH.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonH.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonH.Location = new System.Drawing.Point(468, 348);
+            this.ButtonH.Location = new System.Drawing.Point(318, 292);
             this.ButtonH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonH.Name = "ButtonH";
             this.ButtonH.Size = new System.Drawing.Size(41, 30);
@@ -380,7 +387,7 @@ namespace EnigmaSimulator
             this.ButtonG.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonG.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonG.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonG.Location = new System.Drawing.Point(421, 348);
+            this.ButtonG.Location = new System.Drawing.Point(271, 292);
             this.ButtonG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonG.Name = "ButtonG";
             this.ButtonG.Size = new System.Drawing.Size(41, 30);
@@ -394,7 +401,7 @@ namespace EnigmaSimulator
             this.ButtonM.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonM.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonM.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonM.Location = new System.Drawing.Point(536, 382);
+            this.ButtonM.Location = new System.Drawing.Point(386, 326);
             this.ButtonM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonM.Name = "ButtonM";
             this.ButtonM.Size = new System.Drawing.Size(41, 30);
@@ -408,7 +415,7 @@ namespace EnigmaSimulator
             this.ButtonN.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonN.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonN.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonN.Location = new System.Drawing.Point(489, 382);
+            this.ButtonN.Location = new System.Drawing.Point(339, 326);
             this.ButtonN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonN.Name = "ButtonN";
             this.ButtonN.Size = new System.Drawing.Size(41, 30);
@@ -422,7 +429,7 @@ namespace EnigmaSimulator
             this.ButtonB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonB.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonB.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonB.Location = new System.Drawing.Point(442, 382);
+            this.ButtonB.Location = new System.Drawing.Point(292, 326);
             this.ButtonB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonB.Name = "ButtonB";
             this.ButtonB.Size = new System.Drawing.Size(41, 30);
@@ -436,7 +443,7 @@ namespace EnigmaSimulator
             this.ButtonV.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonV.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonV.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonV.Location = new System.Drawing.Point(395, 382);
+            this.ButtonV.Location = new System.Drawing.Point(245, 326);
             this.ButtonV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonV.Name = "ButtonV";
             this.ButtonV.Size = new System.Drawing.Size(41, 30);
@@ -450,7 +457,7 @@ namespace EnigmaSimulator
             this.ButtonC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonC.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonC.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonC.Location = new System.Drawing.Point(348, 382);
+            this.ButtonC.Location = new System.Drawing.Point(198, 326);
             this.ButtonC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonC.Name = "ButtonC";
             this.ButtonC.Size = new System.Drawing.Size(41, 30);
@@ -464,7 +471,7 @@ namespace EnigmaSimulator
             this.ButtonX.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonX.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonX.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonX.Location = new System.Drawing.Point(301, 382);
+            this.ButtonX.Location = new System.Drawing.Point(151, 326);
             this.ButtonX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonX.Name = "ButtonX";
             this.ButtonX.Size = new System.Drawing.Size(41, 30);
@@ -478,7 +485,7 @@ namespace EnigmaSimulator
             this.ButtonZ.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonZ.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ButtonZ.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ButtonZ.Location = new System.Drawing.Point(442, 314);
+            this.ButtonZ.Location = new System.Drawing.Point(292, 258);
             this.ButtonZ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonZ.Name = "ButtonZ";
             this.ButtonZ.Size = new System.Drawing.Size(41, 30);
@@ -495,7 +502,7 @@ namespace EnigmaSimulator
             // LabelQ
             // 
             this.LabelQ.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelQ.Location = new System.Drawing.Point(207, 194);
+            this.LabelQ.Location = new System.Drawing.Point(57, 138);
             this.LabelQ.Name = "LabelQ";
             this.LabelQ.Size = new System.Drawing.Size(41, 30);
             this.LabelQ.TabIndex = 26;
@@ -505,7 +512,7 @@ namespace EnigmaSimulator
             // LabelW
             // 
             this.LabelW.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelW.Location = new System.Drawing.Point(254, 194);
+            this.LabelW.Location = new System.Drawing.Point(104, 138);
             this.LabelW.Name = "LabelW";
             this.LabelW.Size = new System.Drawing.Size(41, 30);
             this.LabelW.TabIndex = 27;
@@ -515,7 +522,7 @@ namespace EnigmaSimulator
             // LabelE
             // 
             this.LabelE.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelE.Location = new System.Drawing.Point(301, 194);
+            this.LabelE.Location = new System.Drawing.Point(151, 138);
             this.LabelE.Name = "LabelE";
             this.LabelE.Size = new System.Drawing.Size(41, 30);
             this.LabelE.TabIndex = 28;
@@ -525,7 +532,7 @@ namespace EnigmaSimulator
             // LabelR
             // 
             this.LabelR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelR.Location = new System.Drawing.Point(348, 194);
+            this.LabelR.Location = new System.Drawing.Point(198, 138);
             this.LabelR.Name = "LabelR";
             this.LabelR.Size = new System.Drawing.Size(41, 30);
             this.LabelR.TabIndex = 29;
@@ -535,7 +542,7 @@ namespace EnigmaSimulator
             // LabelT
             // 
             this.LabelT.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelT.Location = new System.Drawing.Point(395, 194);
+            this.LabelT.Location = new System.Drawing.Point(245, 138);
             this.LabelT.Name = "LabelT";
             this.LabelT.Size = new System.Drawing.Size(41, 30);
             this.LabelT.TabIndex = 30;
@@ -545,7 +552,7 @@ namespace EnigmaSimulator
             // LabelZ
             // 
             this.LabelZ.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelZ.Location = new System.Drawing.Point(442, 194);
+            this.LabelZ.Location = new System.Drawing.Point(292, 138);
             this.LabelZ.Name = "LabelZ";
             this.LabelZ.Size = new System.Drawing.Size(41, 30);
             this.LabelZ.TabIndex = 31;
@@ -555,7 +562,7 @@ namespace EnigmaSimulator
             // LabelC
             // 
             this.LabelC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelC.Location = new System.Drawing.Point(348, 264);
+            this.LabelC.Location = new System.Drawing.Point(198, 208);
             this.LabelC.Name = "LabelC";
             this.LabelC.Size = new System.Drawing.Size(41, 30);
             this.LabelC.TabIndex = 32;
@@ -565,7 +572,7 @@ namespace EnigmaSimulator
             // LabelX
             // 
             this.LabelX.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelX.Location = new System.Drawing.Point(301, 264);
+            this.LabelX.Location = new System.Drawing.Point(151, 208);
             this.LabelX.Name = "LabelX";
             this.LabelX.Size = new System.Drawing.Size(41, 30);
             this.LabelX.TabIndex = 33;
@@ -575,7 +582,7 @@ namespace EnigmaSimulator
             // LabelY
             // 
             this.LabelY.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelY.Location = new System.Drawing.Point(254, 264);
+            this.LabelY.Location = new System.Drawing.Point(104, 208);
             this.LabelY.Name = "LabelY";
             this.LabelY.Size = new System.Drawing.Size(41, 30);
             this.LabelY.TabIndex = 34;
@@ -585,7 +592,7 @@ namespace EnigmaSimulator
             // LabelP
             // 
             this.LabelP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelP.Location = new System.Drawing.Point(207, 264);
+            this.LabelP.Location = new System.Drawing.Point(57, 208);
             this.LabelP.Name = "LabelP";
             this.LabelP.Size = new System.Drawing.Size(41, 30);
             this.LabelP.TabIndex = 35;
@@ -595,7 +602,7 @@ namespace EnigmaSimulator
             // LabelK
             // 
             this.LabelK.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelK.Location = new System.Drawing.Point(562, 229);
+            this.LabelK.Location = new System.Drawing.Point(412, 173);
             this.LabelK.Name = "LabelK";
             this.LabelK.Size = new System.Drawing.Size(41, 30);
             this.LabelK.TabIndex = 36;
@@ -605,7 +612,7 @@ namespace EnigmaSimulator
             // LabelJ
             // 
             this.LabelJ.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelJ.Location = new System.Drawing.Point(515, 229);
+            this.LabelJ.Location = new System.Drawing.Point(365, 173);
             this.LabelJ.Name = "LabelJ";
             this.LabelJ.Size = new System.Drawing.Size(41, 30);
             this.LabelJ.TabIndex = 37;
@@ -615,7 +622,7 @@ namespace EnigmaSimulator
             // LabelH
             // 
             this.LabelH.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelH.Location = new System.Drawing.Point(468, 229);
+            this.LabelH.Location = new System.Drawing.Point(318, 173);
             this.LabelH.Name = "LabelH";
             this.LabelH.Size = new System.Drawing.Size(41, 30);
             this.LabelH.TabIndex = 38;
@@ -625,7 +632,7 @@ namespace EnigmaSimulator
             // LabelA
             // 
             this.LabelA.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelA.Location = new System.Drawing.Point(233, 229);
+            this.LabelA.Location = new System.Drawing.Point(83, 173);
             this.LabelA.Name = "LabelA";
             this.LabelA.Size = new System.Drawing.Size(41, 30);
             this.LabelA.TabIndex = 39;
@@ -635,7 +642,7 @@ namespace EnigmaSimulator
             // LabelO
             // 
             this.LabelO.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelO.Location = new System.Drawing.Point(583, 194);
+            this.LabelO.Location = new System.Drawing.Point(433, 138);
             this.LabelO.Name = "LabelO";
             this.LabelO.Size = new System.Drawing.Size(41, 30);
             this.LabelO.TabIndex = 40;
@@ -645,7 +652,7 @@ namespace EnigmaSimulator
             // LabelI
             // 
             this.LabelI.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelI.Location = new System.Drawing.Point(536, 194);
+            this.LabelI.Location = new System.Drawing.Point(386, 138);
             this.LabelI.Name = "LabelI";
             this.LabelI.Size = new System.Drawing.Size(41, 30);
             this.LabelI.TabIndex = 41;
@@ -655,7 +662,7 @@ namespace EnigmaSimulator
             // LabelU
             // 
             this.LabelU.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelU.Location = new System.Drawing.Point(489, 194);
+            this.LabelU.Location = new System.Drawing.Point(339, 138);
             this.LabelU.Name = "LabelU";
             this.LabelU.Size = new System.Drawing.Size(41, 30);
             this.LabelU.TabIndex = 42;
@@ -665,7 +672,7 @@ namespace EnigmaSimulator
             // LabelL
             // 
             this.LabelL.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelL.Location = new System.Drawing.Point(583, 264);
+            this.LabelL.Location = new System.Drawing.Point(433, 208);
             this.LabelL.Name = "LabelL";
             this.LabelL.Size = new System.Drawing.Size(41, 30);
             this.LabelL.TabIndex = 43;
@@ -675,7 +682,7 @@ namespace EnigmaSimulator
             // LabelN
             // 
             this.LabelN.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelN.Location = new System.Drawing.Point(489, 264);
+            this.LabelN.Location = new System.Drawing.Point(339, 208);
             this.LabelN.Name = "LabelN";
             this.LabelN.Size = new System.Drawing.Size(41, 30);
             this.LabelN.TabIndex = 44;
@@ -685,7 +692,7 @@ namespace EnigmaSimulator
             // LabelV
             // 
             this.LabelV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelV.Location = new System.Drawing.Point(395, 264);
+            this.LabelV.Location = new System.Drawing.Point(245, 208);
             this.LabelV.Name = "LabelV";
             this.LabelV.Size = new System.Drawing.Size(41, 30);
             this.LabelV.TabIndex = 45;
@@ -695,7 +702,7 @@ namespace EnigmaSimulator
             // LabelG
             // 
             this.LabelG.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelG.Location = new System.Drawing.Point(421, 229);
+            this.LabelG.Location = new System.Drawing.Point(271, 173);
             this.LabelG.Name = "LabelG";
             this.LabelG.Size = new System.Drawing.Size(41, 30);
             this.LabelG.TabIndex = 46;
@@ -705,7 +712,7 @@ namespace EnigmaSimulator
             // LabelF
             // 
             this.LabelF.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelF.Location = new System.Drawing.Point(374, 229);
+            this.LabelF.Location = new System.Drawing.Point(224, 173);
             this.LabelF.Name = "LabelF";
             this.LabelF.Size = new System.Drawing.Size(41, 30);
             this.LabelF.TabIndex = 47;
@@ -715,7 +722,7 @@ namespace EnigmaSimulator
             // LabelD
             // 
             this.LabelD.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelD.Location = new System.Drawing.Point(327, 229);
+            this.LabelD.Location = new System.Drawing.Point(177, 173);
             this.LabelD.Name = "LabelD";
             this.LabelD.Size = new System.Drawing.Size(41, 30);
             this.LabelD.TabIndex = 48;
@@ -725,7 +732,7 @@ namespace EnigmaSimulator
             // LabelM
             // 
             this.LabelM.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelM.Location = new System.Drawing.Point(536, 264);
+            this.LabelM.Location = new System.Drawing.Point(386, 208);
             this.LabelM.Name = "LabelM";
             this.LabelM.Size = new System.Drawing.Size(41, 30);
             this.LabelM.TabIndex = 49;
@@ -735,7 +742,7 @@ namespace EnigmaSimulator
             // LabelB
             // 
             this.LabelB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelB.Location = new System.Drawing.Point(442, 264);
+            this.LabelB.Location = new System.Drawing.Point(292, 208);
             this.LabelB.Name = "LabelB";
             this.LabelB.Size = new System.Drawing.Size(41, 30);
             this.LabelB.TabIndex = 50;
@@ -745,7 +752,7 @@ namespace EnigmaSimulator
             // LabelS
             // 
             this.LabelS.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelS.Location = new System.Drawing.Point(280, 229);
+            this.LabelS.Location = new System.Drawing.Point(130, 173);
             this.LabelS.Name = "LabelS";
             this.LabelS.Size = new System.Drawing.Size(41, 30);
             this.LabelS.TabIndex = 51;
@@ -755,7 +762,7 @@ namespace EnigmaSimulator
             // LabelRotorLeft
             // 
             this.LabelRotorLeft.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelRotorLeft.Location = new System.Drawing.Point(207, 57);
+            this.LabelRotorLeft.Location = new System.Drawing.Point(141, 61);
             this.LabelRotorLeft.Name = "LabelRotorLeft";
             this.LabelRotorLeft.Size = new System.Drawing.Size(41, 30);
             this.LabelRotorLeft.TabIndex = 52;
@@ -765,7 +772,7 @@ namespace EnigmaSimulator
             // LabelRotorMid
             // 
             this.LabelRotorMid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelRotorMid.Location = new System.Drawing.Point(327, 57);
+            this.LabelRotorMid.Location = new System.Drawing.Point(261, 61);
             this.LabelRotorMid.Name = "LabelRotorMid";
             this.LabelRotorMid.Size = new System.Drawing.Size(41, 30);
             this.LabelRotorMid.TabIndex = 39;
@@ -775,7 +782,7 @@ namespace EnigmaSimulator
             // LabelRotorRight
             // 
             this.LabelRotorRight.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LabelRotorRight.Location = new System.Drawing.Point(453, 57);
+            this.LabelRotorRight.Location = new System.Drawing.Point(387, 61);
             this.LabelRotorRight.Name = "LabelRotorRight";
             this.LabelRotorRight.Size = new System.Drawing.Size(41, 30);
             this.LabelRotorRight.TabIndex = 39;
@@ -785,7 +792,7 @@ namespace EnigmaSimulator
             // label4
             // 
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Location = new System.Drawing.Point(322, -115);
+            this.label4.Location = new System.Drawing.Point(256, -111);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 30);
             this.label4.TabIndex = 39;
@@ -794,7 +801,7 @@ namespace EnigmaSimulator
             // 
             // ButtonLeftDown
             // 
-            this.ButtonLeftDown.Location = new System.Drawing.Point(207, 90);
+            this.ButtonLeftDown.Location = new System.Drawing.Point(141, 94);
             this.ButtonLeftDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonLeftDown.Name = "ButtonLeftDown";
             this.ButtonLeftDown.Size = new System.Drawing.Size(41, 23);
@@ -805,7 +812,7 @@ namespace EnigmaSimulator
             // 
             // ButtonLeftUp
             // 
-            this.ButtonLeftUp.Location = new System.Drawing.Point(207, 31);
+            this.ButtonLeftUp.Location = new System.Drawing.Point(141, 35);
             this.ButtonLeftUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonLeftUp.Name = "ButtonLeftUp";
             this.ButtonLeftUp.Size = new System.Drawing.Size(41, 23);
@@ -816,7 +823,7 @@ namespace EnigmaSimulator
             // 
             // ButtonMidUp
             // 
-            this.ButtonMidUp.Location = new System.Drawing.Point(327, 31);
+            this.ButtonMidUp.Location = new System.Drawing.Point(261, 35);
             this.ButtonMidUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonMidUp.Name = "ButtonMidUp";
             this.ButtonMidUp.Size = new System.Drawing.Size(41, 23);
@@ -827,7 +834,7 @@ namespace EnigmaSimulator
             // 
             // ButtonRightUp
             // 
-            this.ButtonRightUp.Location = new System.Drawing.Point(453, 31);
+            this.ButtonRightUp.Location = new System.Drawing.Point(387, 35);
             this.ButtonRightUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonRightUp.Name = "ButtonRightUp";
             this.ButtonRightUp.Size = new System.Drawing.Size(41, 23);
@@ -838,7 +845,7 @@ namespace EnigmaSimulator
             // 
             // ButtonMidDown
             // 
-            this.ButtonMidDown.Location = new System.Drawing.Point(327, 90);
+            this.ButtonMidDown.Location = new System.Drawing.Point(261, 94);
             this.ButtonMidDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonMidDown.Name = "ButtonMidDown";
             this.ButtonMidDown.Size = new System.Drawing.Size(41, 23);
@@ -849,7 +856,7 @@ namespace EnigmaSimulator
             // 
             // ButtonRightDown
             // 
-            this.ButtonRightDown.Location = new System.Drawing.Point(453, 90);
+            this.ButtonRightDown.Location = new System.Drawing.Point(387, 94);
             this.ButtonRightDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonRightDown.Name = "ButtonRightDown";
             this.ButtonRightDown.Size = new System.Drawing.Size(41, 23);
@@ -860,7 +867,7 @@ namespace EnigmaSimulator
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(631, 355);
+            this.label1.Location = new System.Drawing.Point(481, 299);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 18);
             this.label1.TabIndex = 55;
@@ -868,7 +875,7 @@ namespace EnigmaSimulator
             // 
             // LabelPostInput
             // 
-            this.LabelPostInput.Location = new System.Drawing.Point(663, 355);
+            this.LabelPostInput.Location = new System.Drawing.Point(513, 299);
             this.LabelPostInput.Name = "LabelPostInput";
             this.LabelPostInput.Size = new System.Drawing.Size(43, 18);
             this.LabelPostInput.TabIndex = 56;
@@ -876,7 +883,7 @@ namespace EnigmaSimulator
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(248, 90);
+            this.label3.Location = new System.Drawing.Point(182, 94);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 18);
             this.label3.TabIndex = 55;
@@ -884,7 +891,7 @@ namespace EnigmaSimulator
             // 
             // LabelPostLeft
             // 
-            this.LabelPostLeft.Location = new System.Drawing.Point(280, 90);
+            this.LabelPostLeft.Location = new System.Drawing.Point(214, 94);
             this.LabelPostLeft.Name = "LabelPostLeft";
             this.LabelPostLeft.Size = new System.Drawing.Size(43, 18);
             this.LabelPostLeft.TabIndex = 56;
@@ -892,7 +899,7 @@ namespace EnigmaSimulator
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(372, 90);
+            this.label6.Location = new System.Drawing.Point(306, 94);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(26, 18);
             this.label6.TabIndex = 55;
@@ -900,7 +907,7 @@ namespace EnigmaSimulator
             // 
             // LabelPostMid
             // 
-            this.LabelPostMid.Location = new System.Drawing.Point(404, 90);
+            this.LabelPostMid.Location = new System.Drawing.Point(338, 94);
             this.LabelPostMid.Name = "LabelPostMid";
             this.LabelPostMid.Size = new System.Drawing.Size(43, 18);
             this.LabelPostMid.TabIndex = 56;
@@ -908,7 +915,7 @@ namespace EnigmaSimulator
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(493, 90);
+            this.label8.Location = new System.Drawing.Point(427, 94);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(26, 18);
             this.label8.TabIndex = 55;
@@ -916,7 +923,7 @@ namespace EnigmaSimulator
             // 
             // LabelPostRight
             // 
-            this.LabelPostRight.Location = new System.Drawing.Point(525, 90);
+            this.LabelPostRight.Location = new System.Drawing.Point(459, 94);
             this.LabelPostRight.Name = "LabelPostRight";
             this.LabelPostRight.Size = new System.Drawing.Size(43, 18);
             this.LabelPostRight.TabIndex = 56;
@@ -924,7 +931,7 @@ namespace EnigmaSimulator
             // 
             // LabelPreRight
             // 
-            this.LabelPreRight.Location = new System.Drawing.Point(525, 57);
+            this.LabelPreRight.Location = new System.Drawing.Point(459, 61);
             this.LabelPreRight.Name = "LabelPreRight";
             this.LabelPreRight.Size = new System.Drawing.Size(43, 18);
             this.LabelPreRight.TabIndex = 58;
@@ -932,7 +939,7 @@ namespace EnigmaSimulator
             // 
             // label11
             // 
-            this.label11.Location = new System.Drawing.Point(493, 57);
+            this.label11.Location = new System.Drawing.Point(427, 61);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(26, 18);
             this.label11.TabIndex = 57;
@@ -940,7 +947,7 @@ namespace EnigmaSimulator
             // 
             // label12
             // 
-            this.label12.Location = new System.Drawing.Point(374, 57);
+            this.label12.Location = new System.Drawing.Point(308, 61);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(26, 18);
             this.label12.TabIndex = 57;
@@ -948,7 +955,7 @@ namespace EnigmaSimulator
             // 
             // LabelPreMid
             // 
-            this.LabelPreMid.Location = new System.Drawing.Point(406, 57);
+            this.LabelPreMid.Location = new System.Drawing.Point(340, 61);
             this.LabelPreMid.Name = "LabelPreMid";
             this.LabelPreMid.Size = new System.Drawing.Size(43, 18);
             this.LabelPreMid.TabIndex = 58;
@@ -956,7 +963,7 @@ namespace EnigmaSimulator
             // 
             // label14
             // 
-            this.label14.Location = new System.Drawing.Point(248, 57);
+            this.label14.Location = new System.Drawing.Point(182, 61);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(26, 18);
             this.label14.TabIndex = 57;
@@ -964,7 +971,7 @@ namespace EnigmaSimulator
             // 
             // LabelPreLeft
             // 
-            this.LabelPreLeft.Location = new System.Drawing.Point(280, 57);
+            this.LabelPreLeft.Location = new System.Drawing.Point(214, 61);
             this.LabelPreLeft.Name = "LabelPreLeft";
             this.LabelPreLeft.Size = new System.Drawing.Size(43, 18);
             this.LabelPreLeft.TabIndex = 58;
@@ -972,7 +979,7 @@ namespace EnigmaSimulator
             // 
             // label21
             // 
-            this.label21.Location = new System.Drawing.Point(77, 7);
+            this.label21.Location = new System.Drawing.Point(11, 11);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(43, 153);
             this.label21.TabIndex = 60;
@@ -980,7 +987,7 @@ namespace EnigmaSimulator
             // 
             // label22
             // 
-            this.label22.Location = new System.Drawing.Point(126, 90);
+            this.label22.Location = new System.Drawing.Point(60, 94);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(26, 18);
             this.label22.TabIndex = 55;
@@ -988,7 +995,7 @@ namespace EnigmaSimulator
             // 
             // LabelPostReflector
             // 
-            this.LabelPostReflector.Location = new System.Drawing.Point(158, 90);
+            this.LabelPostReflector.Location = new System.Drawing.Point(92, 94);
             this.LabelPostReflector.Name = "LabelPostReflector";
             this.LabelPostReflector.Size = new System.Drawing.Size(43, 18);
             this.LabelPostReflector.TabIndex = 56;
@@ -996,7 +1003,7 @@ namespace EnigmaSimulator
             // 
             // label24
             // 
-            this.label24.Location = new System.Drawing.Point(126, 57);
+            this.label24.Location = new System.Drawing.Point(60, 61);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(26, 18);
             this.label24.TabIndex = 57;
@@ -1004,7 +1011,7 @@ namespace EnigmaSimulator
             // 
             // LabelPreReflector
             // 
-            this.LabelPreReflector.Location = new System.Drawing.Point(158, 57);
+            this.LabelPreReflector.Location = new System.Drawing.Point(92, 61);
             this.LabelPreReflector.Name = "LabelPreReflector";
             this.LabelPreReflector.Size = new System.Drawing.Size(43, 18);
             this.LabelPreReflector.TabIndex = 58;
@@ -1012,7 +1019,7 @@ namespace EnigmaSimulator
             // 
             // LabelPreOutput
             // 
-            this.LabelPreOutput.Location = new System.Drawing.Point(663, 229);
+            this.LabelPreOutput.Location = new System.Drawing.Point(513, 173);
             this.LabelPreOutput.Name = "LabelPreOutput";
             this.LabelPreOutput.Size = new System.Drawing.Size(43, 18);
             this.LabelPreOutput.TabIndex = 62;
@@ -1020,7 +1027,7 @@ namespace EnigmaSimulator
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(631, 229);
+            this.label5.Location = new System.Drawing.Point(481, 173);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(26, 18);
             this.label5.TabIndex = 61;
@@ -1028,9 +1035,9 @@ namespace EnigmaSimulator
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(726, 137);
+            this.button1.Location = new System.Drawing.Point(660, 138);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 23);
+            this.button1.Size = new System.Drawing.Size(95, 36);
             this.button1.TabIndex = 63;
             this.button1.Text = "Очистить";
             this.button1.UseVisualStyleBackColor = true;
@@ -1039,7 +1046,7 @@ namespace EnigmaSimulator
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.InputTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(621, 12);
+            this.groupBox1.Location = new System.Drawing.Point(555, 16);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 53);
             this.groupBox1.TabIndex = 64;
@@ -1056,7 +1063,7 @@ namespace EnigmaSimulator
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.OutputTextBox);
-            this.groupBox2.Location = new System.Drawing.Point(621, 71);
+            this.groupBox2.Location = new System.Drawing.Point(555, 75);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 53);
             this.groupBox2.TabIndex = 65;
@@ -1070,11 +1077,73 @@ namespace EnigmaSimulator
             this.OutputTextBox.Size = new System.Drawing.Size(188, 22);
             this.OutputTextBox.TabIndex = 0;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.panelTextBox);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Location = new System.Drawing.Point(14, 374);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(488, 212);
+            this.groupBox3.TabIndex = 66;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Коммутационная панель";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(380, 170);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(102, 37);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Применить";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // panelTextBox
+            // 
+            this.panelTextBox.Location = new System.Drawing.Point(6, 38);
+            this.panelTextBox.Multiline = true;
+            this.panelTextBox.Name = "panelTextBox";
+            this.panelTextBox.Size = new System.Drawing.Size(476, 128);
+            this.panelTextBox.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(452, 17);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Введите пары символов в формате: \"AB CD\", разделяя пробелами.";
+            // 
+            // LoadButton
+            // 
+            this.LoadButton.Location = new System.Drawing.Point(660, 546);
+            this.LoadButton.Name = "LoadButton";
+            this.LoadButton.Size = new System.Drawing.Size(95, 35);
+            this.LoadButton.TabIndex = 67;
+            this.LoadButton.Text = "Загрузить";
+            this.LoadButton.UseVisualStyleBackColor = true;
+            this.LoadButton.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.Location = new System.Drawing.Point(559, 546);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(95, 35);
+            this.SaveButton.TabIndex = 68;
+            this.SaveButton.Text = "Сохранить";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 454);
+            this.ClientSize = new System.Drawing.Size(784, 604);
+            this.Controls.Add(this.SaveButton);
+            this.Controls.Add(this.LoadButton);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
@@ -1165,11 +1234,14 @@ namespace EnigmaSimulator
             this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Enigma Simulator - Enigma I (Service)";
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1267,5 +1339,11 @@ namespace EnigmaSimulator
         private System.Windows.Forms.TextBox InputTextBox;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox OutputTextBox;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox panelTextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button LoadButton;
+        private System.Windows.Forms.Button SaveButton;
     }
 }

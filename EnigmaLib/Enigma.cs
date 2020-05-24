@@ -7,20 +7,21 @@ namespace EnigmaLib
     /// <summary>
     /// Represents an Enigma machine
     /// </summary>
+    [Serializable]
     public class Enigma
     {
-        public readonly Reflector _reflector;
-        public readonly Rotor _rotor1;
-        public readonly Rotor _rotor2;
+        public Reflector _reflector;
+        public Rotor _rotor1;
+        public Rotor _rotor2;
 
-        public readonly Rotor _rotor3;
+        public Rotor _rotor3;
 
         // private int _ringSet;
-        
+
         /// <summary>
         /// Represents plugs
         /// </summary>
-        public readonly Dictionary<char, char> _transTab;
+        public Dictionary<char, char> _transTab;
 
         public Enigma(Reflector reflector, Rotor r1, Rotor r2, Rotor r3, string key = "AAA", string plugs = "" /*, 
              int ringSet = 1 */)
@@ -36,16 +37,7 @@ namespace EnigmaLib
             this._reflector.State = 'A';
             // this._ringSet = ringSet;
 
-            this._transTab = new Dictionary<char, char>();
-            foreach (var plugPair in plugs.Split())
-            {
-                if (plugPair.Length != 2)
-                    continue;
-                var k = plugPair[0];
-                var v = plugPair[1];
-                _transTab[k] = v;
-                _transTab[v] = k;
-            }
+            this.SetPlugs(plugs);
         }
 
         public string Encode(string plaintextIn)
@@ -112,6 +104,20 @@ namespace EnigmaLib
             }
 
             return cipheringTmp.ToString();
+        }
+
+        public void SetPlugs(string plugs)
+        {
+            this._transTab = new Dictionary<char, char>();
+            foreach (var plugPair in plugs.Split())
+            {
+                if (plugPair.Length != 2)
+                    continue;
+                var k = plugPair[0];
+                var v = plugPair[1];
+                _transTab[k] = v;
+                _transTab[v] = k;
+            }
         }
 
         public override string ToString()
