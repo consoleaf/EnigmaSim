@@ -264,9 +264,14 @@ namespace EnigmaSimulator
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string value = panelTextBox.Text.Trim().Replace('\n', ' ').ToUpper();
-            data.plugs = value;
-            data.enigma.SetPlugs(data.plugs);
+            try { 
+                string value = panelTextBox.Text.Trim().Replace('\n', ' ').ToUpper();
+                data.plugs = value;
+                data.enigma.SetPlugs(data.plugs);
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Не удалось применить настройки коммутационной панели. Проверьте правильность введённых данных.");
+            }
         }
 
         private void Form1_Shown(object sender, EventArgs e)

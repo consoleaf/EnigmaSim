@@ -111,8 +111,10 @@ namespace EnigmaLib
             this._transTab = new Dictionary<char, char>();
             foreach (var plugPair in plugs.Split())
             {
-                if (plugPair.Length != 2)
+                if (plugPair.Length == 0)
                     continue;
+                if (plugPair.Length != 2)
+                    throw new Exception("Некорректные данные");
                 var k = plugPair[0];
                 var v = plugPair[1];
                 _transTab[k] = v;
